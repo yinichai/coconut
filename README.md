@@ -11,7 +11,7 @@
 ## Tools
 - docker
 - go dep - dependancy management 
-  - [deps charts](https://github.com/golang/dep)
+  - [deps charts](https://github.com/yinichai/coconut/blob/master/deps_charts.png)
 
 
 ## Start & Stop 
