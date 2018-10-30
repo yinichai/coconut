@@ -24,7 +24,8 @@ Listen Port 9060
 ## Endpoints Specs
 - health/readiness check `/_ping`
 - search endpoint `/search?searchTerm&lat&lng` Query params all needed
-  - response: ```[
+  - response: 
+  ```[
 	{
 		"item": {
 			"item_name": "Nord Stage 2 HA76 piano",
@@ -43,9 +44,10 @@ Listen Port 9060
 			"img_urls": "[\"yamaha-electric-upright-piano--83066402.jpeg\"]"
 		}
 	}
-]```
-- response: ```{
+]
+
+  - response: 
+	```{
 	"code": 400,
 	"description": "Bad Request",
-	"error": "missing_lng"
-}```
+	"error": "missing_lng"}```
