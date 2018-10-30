@@ -30,5 +30,6 @@ func (i Item) GetLocation() Location {
 // DistanceSquare power of 2 of two location distance
 func (l Location) DistanceSquare(des Location) float64 {
 	// In order to have one less operation, thereis no need to calulate math.Sqrt here, since the distance will be used as rank order
+	// treat lat and lng as the same weight, even they are 110.567:111.699
 	return math.Pow((l.Lat-des.Lat), 2) + math.Pow((l.Lng-des.Lng), 2)
 }

@@ -3,7 +3,9 @@ package handlers
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
+	"runtime/debug"
 	"strconv"
 	"strings"
 
@@ -12,9 +14,13 @@ import (
 	"github.com/yinichai/coconut/models"
 )
 
-/*
-search?searchTerm=camera&lat=51.948&lng=0.172943
-*/
+//Recover handle panic
+func Recover(w http.ResponseWriter, r *http.Request) {
+	if re := recover(); re != nil {
+		log.Println("Internal Server error.", re, string(debug.Stack()))
+		responses.InternalServerError(w, r, fmt.Errorf("%v", re))
+	}
+}
 
 //Search - search endpoint
 func Search(w http.ResponseWriter, r *http.Request) {
@@ -57,6 +63,8 @@ func Search(w http.ResponseWriter, r *http.Request) {
 		Lat:        lat,
 		Lng:        lng,
 	}
+
+	defer Recover(w, r)
 
 	results, err := data.GetBestResults(inputQuery)
 	if err != nil {
