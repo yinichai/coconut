@@ -10,7 +10,8 @@
  
 ## Tools
 - docker
-- go dep - dependancy management
+- go dep - dependancy management 
+  - [deps charts](https://github.com/golang/dep)
 
 
 ## Start & Stop 
