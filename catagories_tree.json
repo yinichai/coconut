@@ -1,0 +1,38 @@
+{
+  "catagories": {
+    "electronics": {
+      "camera": [
+        "sony",
+        "canon",
+        "nikon",
+        "casio",
+        "panasonic"
+      ],
+      "drone": [
+        "dji",
+        "parrot"
+      ],
+      "batteries": [
+        "battery",
+        "batteries"
+      ]
+    },
+    "music instrument": {
+      "piano": [
+        "yamaha",
+        "kawai",
+        "casio",
+        "keyboard",
+        "semi",
+        "digital"
+      ],
+      "violin": [
+        "4/4",
+        "3/4",
+        "2/4",
+        "1/4",
+        "electric"
+      ]
+    }
+  }
+}

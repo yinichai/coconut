@@ -1,0 +1,19 @@
+{
+  "elec": 0,
+  "electr": 0,
+  "electronics": 0,
+  "music": 0,
+  "instrument": 0,
+  "drone": 1,
+  "camera": 1,
+  "piano": 1,
+  "violin": 1,
+  "batteries": 1,
+  "sony": 2,
+  "canon": 2,
+  "nikon": 2,
+  "dji": 2,
+  "yamaha": 2,
+  "kawai": 2,
+  "casio": 2
+}
