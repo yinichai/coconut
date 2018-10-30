@@ -72,10 +72,11 @@ func Search(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if results == nil {
-		responses.NotFound(w, r, fmt.Errorf("no results"))
+	if len(results) == 0 {
+		responses.NoContent(w)
 		return
 	}
+
 	if err := json.NewEncoder(w).Encode(results); err != nil {
 		responses.InternalServerError(w, r, err)
 		return

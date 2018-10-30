@@ -1,8 +1,6 @@
 package env
 
 import (
-	"log"
-
 	"github.com/jmoiron/sqlx"
 
 	"github.com/kelseyhightower/envconfig"
@@ -23,7 +21,6 @@ func init() {
 
 	var err error
 	DB, err = sqlx.Open("sqlite3", "./fatlama.sqlite3")
-	log.Print("db: ", DB)
 	if err != nil {
 		panic(err)
 	}

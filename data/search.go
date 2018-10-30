@@ -9,20 +9,20 @@ import (
 )
 
 // GetBestResults - search
-func GetBestResults(input models.InputQuery) (*models.DistanceMapSlice, error) {
+func GetBestResults(input models.InputQuery) (models.DistanceMapSlice, error) {
 	var results []models.Item
 
 	if err := DB.Select(&results, exactSearchQuery(input.SearchTerm)); err != nil {
-		return nil, err
+		return models.DistanceMapSlice{}, err
 	}
 
 	scoredResults := calculateResults(input, results)
 
 	if len(scoredResults) > 20 {
 		bestTwenty := scoredResults[:20]
-		return &bestTwenty, nil
+		return bestTwenty, nil
 	}
-	return &scoredResults, nil
+	return scoredResults, nil
 
 }
 
